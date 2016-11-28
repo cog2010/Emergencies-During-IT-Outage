@@ -1,0 +1,41 @@
+<html>
+<!--This is a form that will be used during IT outages to submit emergency orders.-->
+<!--All orders entered here will email to dispatch-all (for dispatching) and a seperate outage box (for record keeping)-->
+<!--This form can be used by both dispatchers and the call center to create orders and since the orders go to dispatch-all, emergency orders can be accessed by all dispatchers regardless of location-->
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheet.css">
+<title>Emergencies During and IT Outage</title>
+</head>
+<body>
+<form>
+  <!--Form to submit emergency orders by email during IT outages, all fields required except order number-->
+  <div class="form-group container-fluid">
+    <div class="container">
+      <!--Auto fill date for form-->
+      <div class='container col-xs-4'>
+        <label for="date">Date and Time</label>
+        <input name="date" class="form-control" id="date">
+      </div>
+      <!--Dropdown select order type, disable default selection-->
+      <div class="container col-xs-2">
+      <label for="orderType">Order Type</label>
+      <select class="form-control">
+        <option value="" disabled="disabled" selected="selected">Order Type</option>
+        <option value="co">CARBMON</option>
+        <option value="crossbore">CBINV</option>
+        <option value="cutline">CUTLINE</option>
+        <option value="leak">LEAK</option>
+        <option value="nglp">NGLP</option>
+      </select>
+    </div>
+    </div>
+  </div>
+</form>
+<script>
+  //JS to pull current time and date
+  document.getElementById('date').value = Date();
+</script>
+</body>
+</html>
